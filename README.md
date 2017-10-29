@@ -1,3 +1,33 @@
+Extending features on gulp-serve by Gusakov Nikita...
+
+postware
+========
+```js
+var gulp = require('gulp');
+var serve = require('gulp-serve');
+var fs = require('fs');
+
+gulp.task('serve', serve('public'));
+gulp.task('serve-build', serve(['public', 'build']));
+gulp.task('serve-prod', serve({
+  root: ['public', 'build'],
+  port: 80,
+  hostname: 'localhost',
+  middleware: function(req, res) {
+    // custom optional middleware
+  },
+  postwares: [errorHandler]
+}));
+
+errorHandler = function(req, res, next) {
+  fs.readFile("404.html", function(err, data) {
+    //....
+  })
+}
+```
+
+Original readme :>>
+
 gulp-serve
 ==========
 [![Circle CI](https://circleci.com/gh/nkt/gulp-serve/tree/master.svg?style=svg)](https://circleci.com/gh/nkt/gulp-serve/tree/master)

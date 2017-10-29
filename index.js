@@ -38,6 +38,10 @@ module.exports = function (config) {
       config.middlewares = [];
     }
 
+    if (!config.postwares) {
+      config.postwares = [];
+    }
+
     if (config.middleware) {
       config.middlewares.push(config.middleware);
     }
@@ -48,6 +52,10 @@ module.exports = function (config) {
 
     config.root.forEach(function (path) {
       app.use(serveStatic(path));
+    });
+
+    config.postwares.forEach(function(postware) {
+      app.use(postware);
     });
 
     if (!config.port) {

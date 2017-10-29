@@ -1,11 +1,11 @@
 {
-  "name": "gulp-serve",
-  "version": "1.4.0",
-  "description": "Serve your assets",
+  "name": "gulp-serve-extended",
+  "version": "1.0.0",
+  "description": "Extending features on gulp-serve by Gusakov Nikita",
   "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "git://github.com/nkt/gulp-serve.git"
+    "url": "git://github.com/wlblanchette/gulp-serve.git"
   },
   "keywords": [
     "gulpfriendly",
@@ -13,8 +13,11 @@
     "serve",
     "connect"
   ],
-  "author": "Gusakov Nikita",
+  "author": "William Blanchette",
   "contributors": [
+    {
+      "name": "Gusakov Nikita"
+    },
     {
       "name": "Ilya Lakhin",
       "email": "eliah.lakhin@gmail.com",
